@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    text-transform: capitalize;
+    transition: 0.4s ease-in-out;
+    font-family: 'Kalnia', serif;
+}
+body a{
+    text-decoration: none;
+}
+
+$mainColor: #4f15ee;
+$mainColor-Hover: #8a65f2;
+$black:#222;
+$white:#fff;
+$border:.1rem solid rgba(0,0,0,.1);
+$box-shadow:0 0.5rem 1rem rgba(0,0,0,.1);
+
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    overflow-x: hidden}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background-color: $mainColor;
+    color: $white;
+    font-size: 1.7rem;
+    font-weight: 800;
+    &:hover{
+        background-color: $black;
+        color: $white;
+    }
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: $box-shadow;
+    padding: 0 4%;
+    background: $white;
+    .logo{
+        font-size: 2.8rem;
+        font-weight: 400;
+        color: $mainColor;
+        i{
+            color: $black;
+            font-size: 4rem;
+            padding-right: .3rem;
+        }
+    }
+    .navbar{
+        li{
+            a{
+                font-size: 1.3rem;
+                margin: 0 1rem;
+                color: $black;
+                
+                &:hover{
+                    color: $mainColor;
+                }    
+            }
+        }
+    }
+    .icons {
+        div{
+            font-size: 2rem;
+            margin-left: 1.7rem;
+            cursor: pointer;
+            &:hover{
+                color: $mainColor;
+            }
+        }
+    }
+    .search-form{
+        position: absolute;
+        top: 115%; right: -92rem;
+        width: 50rem;
+        border-radius: 5rem;
+        height: 5.5rem;
+        box-shadow: $box-shadow;
+        &.active{
+            right: 2rem;
+        }
+        input{
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            padding: 0 4rem;
+            border-radius: 5rem;
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: $black;
+            &::placeholder{
+                color: $black;
+            }
+        }
+        label{
+                font-size: 2rem;
+                margin-right: 4rem;
+                cursor: pointer;
+                &:hover{
+                    color: $mainColor;
+                }
+        }
+    }
+    .shopping-cart{
+        position: absolute;
+        top: 115%; right: -92rem;
+        width: 35rem;
+        border-radius:1rem;
+        background-color: $white;
+        box-shadow: $box-shadow;
+        border: $border;
+        &.active{
+            right: 2rem;
+        }
+        .box{
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                width: 53rem;
+                margin-bottom: 1.5rem;
+                position: relative;
+                img{
+                    width:18%;
+                }
+                .fa-times{
+                    position: absolute;
+                    top: 50%;
+                    right: 22rem;
+                    transform: translateY(-50%);
+                    font-size: 2rem;
+                    cursor: pointer;
+                    color: $black;
+                    &:hover{
+                        color: $mainColor;
+                    }
+                }
+                .content{
+                    font-size: 1.2rem;
+                    color: $black;
+                    padding-bottom: .5rem;
+                }
+                span{
+                    font-size: 1.5rem;
+                    color: $black;
+                    font-weight: 500;
+                    &.multiply{
+                        color: $mainColor;
+                        margin: -.2rem;
+                        font-weight: 800;
+                    }
+                }
+            }
+            .total{
+                text-align: center;
+                font-size: 2rem;
+            }
+            .btn{
+                width: 100%;
+                text-align: center;
+                
+            }
+        
+    }
+    .login-form{
+        position: absolute;
+        top: 115%; right: -92rem;
+        width: 35rem;
+        border-radius:1rem;
+        background-color: $white;
+        box-shadow: $box-shadow;
+        border: $border;
+        padding: 2rem;
+        &.active{
+            right: 2rem;
+        }
+        h3{
+            font-size: 2rem;
+            font-weight: 600;
+            color: $black;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .box{
+            margin: .7rem;
+            border: $border;
+            padding: 1rem 1.2rem;
+            color: $black;
+            width: 100%;
+        }
+        .remember{
+            margin: .7rem;
+            label{
+                font-size: 1.2rem;
+                color: $black;
+                cursor: pointer;
+                &:hover{
+                    color: $mainColor;
+                }
+            }
+        }
+        p{
+            color: $black;
+            font-size: 1.2rem;
+            padding-top: .7rem;
+            a{
+                color: $mainColor;
+                transition: 0.4s ease-in-out;
+                position: relative;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    width: 0%;
+                    height: 2px;
+                    transition: 0.4s ease-in-out;
+                    background-color: $mainColor;
+                }
+                &:hover::after{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+#menu-btn{
+    display: none;
+}
+
+
+
+footer{
+    position: relative;
+    width: 100%; 
+    min-height: 10rem;
+    background-color:$black;
+    padding: 2rem 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .social{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+        li{
+            list-style: none;
+            a{
+                font-size: 3rem;
+                color: $white;
+                margin: 0 10px;
+                transition: 0.3s ease-in-out;
+                opacity: 0.9;
+                display: inline-block;
+                &:hover{
+                    transform: translate(2px,-10px);
+                    color: $mainColor-Hover;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .link{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem 0;
+        a{
+            text-decoration: none;
+            font-size: 1.4rem;
+            color: $white;
+            margin: 0px 1rem;
+            transition: 0.3s ease-in-out;
+            opacity: 0.75;
+            display: inline-block;
+            transition: 0.5s;
+            &:hover{
+                transform: translate(2px,-5px);
+                color: $mainColor-Hover;
+                opacity: 1;
+            }
+        }
+    }
+    p{
+        color: $white;
+        text-decoration: none;
+        margin: 2rem 0 1rem 0;
+        font-size: 1rem;
+        letter-spacing: 0.01em;
+        transition: 1s ease-in-out;
+        &:hover{
+            color: $mainColor-Hover;
+            letter-spacing: 0.3em;
+        }
+    }
+    .wave{
+        position: absolute;
+        top: -80px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background:url(../image/wave.png);
+        background-size: 1000px 100px;
+        &#wave1{
+            z-index: 999;
+            filter: saturate(0) brightness(0.275);
+            opacity: 1;
+            bottom: -3rem;
+            animation: animateWave1 4s linear infinite;
+        }
+        &#wave2{
+            filter: hue-rotate(50deg) ;
+            z-index: 88;
+            opacity: 0.5;
+            bottom: 10px;
+            animation: animateWave2 4s linear infinite;
+        }
+        &#wave3{
+            filter: hue-rotate(70deg)  brightness(1);
+            z-index: 88;
+            opacity: 0.8;
+            bottom: 10px;
+            animation: animateWave3 6s linear infinite;
+        }
+        &#wave4{
+            filter: hue-rotate(60deg) brightness(1);
+            z-index: 77;
+            opacity: 0.9;
+            bottom: 15px;
+            animation: animateWave4 3s linear infinite;
+        }
+    }
+    @keyframes animateWave4{
+        0%{
+            background-position-x: 1000px;
+        }
+        100%{
+            background-position-x: 0px;
+        }
+    }
+    @keyframes animateWave3{
+        0%{
+            background-position-x: 0px;
+        }
+        100%{
+            background-position-x: 1000px;
+        }
+    }
+    @keyframes animateWave1{
+        0%{
+            background-position-x: 1000px;
+        }
+        100%{
+            background-position-x: 0px;
+        }
+    }    
+    @keyframes animateWave2{
+        0%{
+            background-position-x: 0px;
+        }
+        100%{
+            background-position-x: 1000px;
+        }
+    }
+}
+
+
+
+// media
+
+@media (769px <= width <= 991px) {
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 2rem;
+    }
+}
+@media ( width <= 768px) {
+    
+    #menu-btn{
+        display: inline-block;
+    }
+    .header{
+
+        .search-form{
+            width: 90%;
+            border-radius: 4rem;
+            right: -92rem;
+            &.active{
+                right: 0rem;
+            }
+        }
+
+        .navbar{
+            position: absolute;
+            top: 99%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            clip-path: polygon(0 0,100% 0, 100% 0, 0 0);
+            background-color: $white;
+            &.active{
+                transition: 0.5s ease-in-out;
+                clip-path: polygon(0 0, 100% 0 , 100% 100% , 0 100%);
+            }
+            ul{
+                width: 100%;
+                margin: 0 !important;
+                padding: 0 ;                box-shadow: $box-shadow;
+                flex-direction: column;
+                background-color: $black;
+                li{
+                    margin: 1rem 0;
+                    padding: 1rem 5rem;
+                    a{
+                        color: $white;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+@media ( width <= 450px) {
+    html{
+        font-size: 50%;
+    }
+}
